@@ -11,6 +11,6 @@ try {
   }
 
   } catch(ex) {
-    //It's OK. The browser will be fine.
+    
   }
 }, 5000);
