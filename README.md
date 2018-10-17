@@ -10,13 +10,12 @@ Paste script below into your browser's console just before hitting play and wait
 var checkForSkip = setInterval(function(){ 
 
 try {
-  var skipBtn = document.querySelectorAll(".skip-credits")[0].children[0];
-  skipBtn.click();
-  
-  window.setTimeout(function() {
-    var playBtn = document.querySelectorAll(".PlayerControlsNeo__button-control-row")[0].children[0]
-    playBtn.click();
-  }, 1000);
+  var playBtn = document.querySelectorAll(".PlayerControlsNeo__button-control-row")[0].children[0]
+    
+  if (playBtn.className.indexOf('button-nfplayerPlay') > -1) {
+    var skipBtn = document.querySelectorAll(".skip-credits")[0].children[0];
+    skipBtn.click();
+  }
 
   } catch(ex) {
     //It's OK. The browser will be fine.
